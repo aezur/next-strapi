@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "links",
+  "info": {
+    "singularName": "link",
+    "pluralName": "links",
+    "displayName": "Links",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "link": {
+      "type": "string",
+      "unique": true
+    },
+    "icon": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string",
+      "unique": true
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "_blank",
+        "_self"
+      ],
+      "required": true,
+      "default": "_self"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "page",
+        "social",
+        "affiliate",
+        "external",
+        "other"
+      ],
+      "required": true
+    }
+  }
+}
