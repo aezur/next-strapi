@@ -28,7 +28,7 @@ export default async function MainLayout({
 }>) {
   const { data } = await getGlobal();
   return (
-    <div className="flex flex-col min-h-screen text-white">
+    <div className="flex flex-col min-h-screen bg-secondary text-primary">
       <PageHeader
         className="sticky"
         logo={data.logo}
