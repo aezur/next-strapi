@@ -20,13 +20,11 @@ export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // `/_next/` and `/api/` are ignored by the watcher, but we need to ignore files in `public` manually.
+  const whitelist = ["/favicon.ico", "/icon.ico", "/robots.txt"];
   if (
-    [
-      // Your files in `public`
-      "/icon.ico",
-      "/robots.txt",
-      // ...etc
-    ].includes(pathname)
+    whitelist.includes(pathname) ||
+    pathname.startsWith("/icons/") ||
+    pathname.startsWith("/images/")
   ) {
     return NextResponse.next();
   }
